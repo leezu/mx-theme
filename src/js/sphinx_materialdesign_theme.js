@@ -141,14 +141,7 @@ $(function() {
     $('a.download').each(function() {
         // button
         var button = document.createElement('button');
-        button.className = 'download mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect';
-
-        // icon
-        var icon = document.createElement('i');
-        icon.className = 'material-icons';
-        var text = document.createTextNode('file_download');
-        icon.appendChild(text);
-        button.appendChild(icon);
+        button.className = 'download mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent';
 
         // link
         var link = $(this).attr('href');
@@ -170,6 +163,9 @@ $(function() {
             return $(this).text();
         }).get().join(' ');
         hint.innerHTML = hintText;
+
+        var text = document.createTextNode(hintText);
+        button.appendChild(text);
 
         componentHandler.upgradeElement(button);
         $(this).remove();
